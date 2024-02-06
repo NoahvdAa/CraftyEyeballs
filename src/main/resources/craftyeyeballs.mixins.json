@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "me.noahvdaa.craftyeyeballs.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+    "ConnectThreadMixin",
+    "MultiplayerServerListPingerMixin"
+  ]
+}

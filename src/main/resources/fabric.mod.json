@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "craftyeyeballs",
+  "version": "${version}",
+  "name": "CraftyEyeballs",
+  "description": "Proper IPv6 support for Minecraft",
+  "authors": [
+    "NoahvdAa"
+  ],
+  "accessWidener": "craftyeyeballs.accesswidener",
+  "contact": {
+    "homepage": "https://github.com/NoahvdAa/CraftyEyeballs",
+    "issues": "https://github.com/NoahvdAa/CraftyEyeballs",
+    "sources": "https://github.com/NoahvdAa/CraftyEyeballs"
+  },
+  "license": "LGPL-3.0-only",
+  "icon": "assets/craftyeyeballs/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "me.noahvdaa.craftyeyeballs.CraftyEyeballs"
+    ]
+  },
+  "mixins": [
+    "craftyeyeballs.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.6",
+    "minecraft": "~1.20.4",
+    "java": ">=17"
+  }
+}

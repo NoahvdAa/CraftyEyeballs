@@ -1,0 +1,10 @@
+accessWidener v2 named
+
+accessible field net/minecraft/client/gui/screen/multiplayer/ConnectScreen connectingCancelled Z
+accessible field net/minecraft/client/gui/screen/multiplayer/ConnectScreen connection Lnet/minecraft/network/ClientConnection;
+accessible field net/minecraft/client/gui/screen/multiplayer/ConnectScreen failureErrorMessage Lnet/minecraft/text/Text;
+accessible field net/minecraft/client/gui/screen/multiplayer/ConnectScreen future Lio/netty/channel/ChannelFuture;
+accessible field net/minecraft/client/gui/screen/multiplayer/ConnectScreen parent Lnet/minecraft/client/gui/screen/Screen;
+
+accessible method net/minecraft/client/gui/screen/multiplayer/ConnectScreen setStatus (Lnet/minecraft/text/Text;)V
+accessible method net/minecraft/client/network/MultiplayerServerListPinger showError (Lnet/minecraft/text/Text;Lnet/minecraft/client/network/ServerInfo;)V
