@@ -1,5 +1,6 @@
 package me.noahvdaa.craftyeyeballs.resolver;
 
+import com.google.common.net.InetAddresses;
 import net.minecraft.client.network.Address;
 import net.minecraft.client.network.BlockListChecker;
 import net.minecraft.client.network.RedirectResolver;
@@ -26,7 +27,10 @@ public final class CraftyEyeballsResolver {
         boolean allAddressesAllowed = Arrays.stream(addresses).allMatch((a) -> BLOCK_LIST_CHECKER.isAllowed(Address.create(new InetSocketAddress(a, in.getPort()))));
 
         if ((addresses.length == 0 || allAddressesAllowed) && BLOCK_LIST_CHECKER.isAllowed(in)) {
-            Optional<ServerAddress> optional = REDIRECT_RESOLVER.lookupRedirect(in);
+            // don't bother looking up a redirect if the address is an IP, there will never be a redirect!
+            Optional<ServerAddress> optional = !InetAddresses.isUriInetAddress(in.getAddress()) ?
+                    REDIRECT_RESOLVER.lookupRedirect(in) : Optional.empty();
+
             if (optional.isPresent()) {
                 InetAddress[] srvAddresses = getAllByName(optional.get().getAddress());
                 boolean allSrvAddressesAllowed = Arrays.stream(srvAddresses).allMatch((a) -> BLOCK_LIST_CHECKER.isAllowed(Address.create(new InetSocketAddress(a, in.getPort()))));
